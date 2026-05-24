@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATES</title>
+
+    <style>
+        body
+        {
+            margin: 0;
+            background: #171a21;
+            font-family: Segoe UI;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .topbar
+        {
+            height: 60px;
+            background: #10141b;
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 30px;
+
+            font-size: 28px;
+            font-weight: bold;
+
+            border-bottom: 2px solid #1f2937;
+        }
+
+        .hero
+        {
+            height: 500px;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.5),
+                rgba(0,0,0,0.7)
+            ),
+            url("images/bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding-left: 80px;
+        }
+
+        .hero h1
+        {
+            font-size: 64px;
+            margin: 0;
+        }
+
+        .hero p
+        {
+            font-size: 22px;
+            color: #c7d5e0;
+            width: 600px;
+        }
+
+        .buttons
+        {
+            margin-top: 30px;
+        }
+
+        .btn
+        {
+            background: #66c0f4;
+            color: white;
+
+            border: none;
+
+            padding: 16px 35px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            margin-right: 15px;
+
+            border-radius: 4px;
+
+            transition: 0.2s;
+        }
+
+        .btn:hover
+        {
+            background: #4fa7d8;
+        }
+
+        .content
+        {
+            padding: 60px 80px;
+        }
+
+        .card
+        {
+            background: #1b2838;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            margin-bottom: 30px;
+        }
+
+        .card h2
+        {
+            margin-top: 0;
+        }
+
+        .footer
+        {
+            padding: 30px;
+
+            text-align: center;
+
+            color: gray;
+
+            border-top: 1px solid #2a475e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        MATES
+    </div>
+
+    <div class="hero">
+
+        <h1>Kayf Life 3</h1>
+
+        <p>
+            Эксперимент начинается.
+            Система нестабильна.
+            Некоторые файлы могут быть повреждены.
+        </p>
+
+        <div class="buttons">
+
+            <button class="btn"
+            onclick="playTrailer()">
+                ТРЕЙЛЕР
+            </button>
+
+            <button class="btn"
+            onclick="openMates()">
+                ОТКРЫТЬ MATES
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+
+            <h2>Описание</h2>
+
+            <p>
+                Kayf Life 3 — экспериментальная
+                система, в которой смерть влияет
+                на игровые файлы.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Системное сообщение</h2>
+
+            <p id="systemText">
+                Доктор Гнус подготовил эксперимент.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        MATES SYSTEM © 2026
+    </div>
+
+    <script>
+
+        function playTrailer()
+        {
+            window.open(
+                "videos/video1.mp4",
+                "_blank"
+            );
+        }
+
+        function openMates()
+        {
+            alert(
+                "MATES CLIENT OFFLINE"
+            );
+        }
+
+        setTimeout(() =>
+        {
+            document.getElementById(
+                "systemText"
+            ).innerText =
+            "Джон Кейв отправил сообщение.";
+        }, 10000);
+
+    </script>
+
+</body>
+</html>
