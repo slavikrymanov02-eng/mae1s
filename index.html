@@ -16,31 +16,51 @@ body
 
     background: #171a21;
 
-    color: white;
-
     font-family: Segoe UI;
 
-    overflow-x: hidden;
+    color: white;
 }
 
 .topbar
 {
-    height: 65px;
+    height: 70px;
 
     background: #10141b;
+
+    border-bottom:
+    1px solid #2a475e;
 
     display: flex;
 
     align-items: center;
 
-    padding-left: 30px;
+    justify-content: space-between;
 
+    padding:
+    0 40px;
+}
+
+.logo
+{
     font-size: 30px;
 
     font-weight: bold;
+}
 
-    border-bottom:
-    2px solid #1f2937;
+.nav
+{
+    display: flex;
+
+    gap: 30px;
+}
+
+.nav a
+{
+    color: #c7d5e0;
+
+    text-decoration: none;
+
+    font-size: 17px;
 }
 
 .hero
@@ -49,8 +69,8 @@ body
 
     background:
     linear-gradient(
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.85)
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.8)
     ),
     url("images/bg.jpg");
 
@@ -64,12 +84,12 @@ body
 
     justify-content: center;
 
-    padding-left: 90px;
+    padding-left: 100px;
 }
 
 .hero h1
 {
-    font-size: 72px;
+    font-size: 70px;
 
     margin: 0;
 }
@@ -78,9 +98,9 @@ body
 {
     width: 700px;
 
-    color: #c7d5e0;
+    font-size: 22px;
 
-    font-size: 23px;
+    color: #c7d5e0;
 
     line-height: 1.6;
 }
@@ -97,15 +117,15 @@ body
 
     color: white;
 
-    font-size: 22px;
+    font-size: 21px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    margin-top: 30px;
+    margin-top: 35px;
 
-    border-radius: 5px;
+    border-radius: 4px;
 
     transition: 0.2s;
 }
@@ -115,11 +135,26 @@ body
     background: #4fa7d8;
 }
 
-.section
+.games
 {
     padding:
     70px
-    90px;
+    100px;
+}
+
+.games h2
+{
+    font-size: 40px;
+}
+
+.grid
+{
+    display: grid;
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    gap: 30px;
 }
 
 .card
@@ -128,51 +163,54 @@ body
 
     border-radius: 8px;
 
-    padding: 35px;
+    overflow: hidden;
 
-    margin-bottom: 35px;
+    transition: 0.2s;
 }
 
-.card h2
+.card:hover
+{
+    transform: scale(1.02);
+}
+
+.card img
+{
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.card-content
+{
+    padding: 20px;
+}
+
+.card h3
 {
     margin-top: 0;
 
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .card p
 {
     color: #c7d5e0;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-.warning
-{
-    color: #ff7675;
 }
 
 .footer
 {
+    margin-top: 80px;
+
     border-top:
     1px solid #2a475e;
 
-    padding: 35px;
+    padding: 30px;
 
     text-align: center;
 
     color: gray;
-}
-
-.version
-{
-    color: #66c0f4;
-
-    margin-top: 15px;
-
-    font-size: 17px;
 }
 
 </style>
@@ -180,25 +218,43 @@ body
 <body>
 
 <div class="topbar">
-    MATES
+
+    <div class="logo">
+        MATES
+    </div>
+
+    <div class="nav">
+
+        <a href="#">
+            Магазин
+        </a>
+
+        <a href="#">
+            Библиотека
+        </a>
+
+        <a href="#">
+            Сообщество
+        </a>
+
+        <a href="#">
+            Поддержка
+        </a>
+
+    </div>
+
 </div>
 
 <div class="hero">
 
     <h1>
-        Experimental
-        Communication
-        Platform
+        MATES CLIENT
     </h1>
 
     <p>
-        MATES — экспериментальная
-        коммуникационная система,
-        предназначенная для тестирования
-        нестабильных цифровых сред.
-
-        Некоторые функции клиента
-        могут работать некорректно.
+        Современная игровая платформа
+        для общения, библиотеки игр
+        и цифрового контента.
     </p>
 
     <a href="MatesSetup.exe" download>
@@ -209,64 +265,77 @@ body
 
     </a>
 
-    <div class="version">
-        Version 0.3.7 beta
-    </div>
-
 </div>
 
-<div class="section">
+<div class="games">
 
-    <div class="card">
+    <h2>
+        Популярное
+    </h2>
 
-        <h2>
-            О платформе
-        </h2>
+    <div class="grid">
 
-        <p>
-            MATES объединяет:
-            систему чатов,
-            экспериментальные игровые среды,
-            внутренние группы,
-            голосовые сообщения
-            и нестабильные файловые системы.
-        </p>
+        <div class="card">
 
-    </div>
+            <img src="images/game1.jpg">
 
-    <div class="card">
+            <div class="card-content">
 
-        <h2>
-            Системное сообщение
-        </h2>
+                <h3>
+                    Kayf Life 3
+                </h3>
 
-        <p id="systemMessage">
-            Доктор Гнус подготовил эксперимент.
-        </p>
+                <p>
+                    Экшен / Приключение
+                </p>
 
-    </div>
+            </div>
 
-    <div class="card">
+        </div>
 
-        <h2>
-            Предупреждение
-        </h2>
+        <div class="card">
 
-        <p class="warning">
-            Использование нестабильных сборок
-            может привести к повреждению
-            игровых файлов.
-        </p>
+            <img src="images/game2.jpg">
+
+            <div class="card-content">
+
+                <h3>
+                    Portal Stories
+                </h3>
+
+                <p>
+                    Головоломка / Sci-Fi
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="images/game3.jpg">
+
+            <div class="card-content">
+
+                <h3>
+                    Black Mesa
+                </h3>
+
+                <p>
+                    Шутер / Научная фантастика
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
 <div class="footer">
-    MATES SYSTEM © 2026
+    MATES © 2026
 </div>
-
-<script>
 
 </body>
 </html>
